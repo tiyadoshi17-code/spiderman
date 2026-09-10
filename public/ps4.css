@@ -160,3 +160,10 @@
     font-size: 0.8rem;
     background: rgba(0, 0, 0, 0.5);
 }
+
+@media (max-width: 768px) {
+    .menu-panel { width: 100%; height: auto; min-height: 100vh; padding: 1.5rem 1rem; border-right: none; }
+    .button-prompts { position: relative; bottom: auto; right: auto; margin-top: 2rem; justify-content: center; gap: 1.5rem; }
+    .menu-title { font-size: 1.8rem; text-align: center; }
+    .congrats-box { margin-bottom: 1rem; }
+}

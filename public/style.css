@@ -230,9 +230,28 @@ header {
     z-index: 12;
 }
 @media (max-width: 768px) {
-    .cards-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
-    .logo { font-size: 4rem; }
-    .subtitle { font-size: 2.5rem; }
+    .cards-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; width: 95%; }
+    .card { padding: 0.8rem; }
+    .card .value { font-size: 1.5rem; }
+    .logo { font-size: 3.5rem; }
+    .subtitle { font-size: 2rem; }
+    
+    header { padding: 1rem; flex-direction: column; align-items: center; gap: 0.5rem; }
+    .mission-header { font-size: 1.2rem; }
+    .timer-value { font-size: 4rem; }
+    
+    .answer-section { padding: 1rem; }
+    #answer-form { flex-direction: column; gap: 0.5rem; }
+    #answer-input { font-size: 0.9rem; padding: 0.8rem; }
+    #btn-submit { margin-top: 0; padding: 0.8rem; width: 100%; }
+    .bottom-bar { flex-direction: column; gap: 1rem; }
+    
+    .rules-container { padding: 1rem; width: 90%; }
+    .rules-container ol, .rules-container ul { font-size: 0.9rem; }
+    
+    #success-screen h1, #failure-screen h1 { font-size: 3.5rem; }
+    .stats-row { gap: 1rem; flex-direction: column; }
+    .divider { width: 100%; height: 1px; }
 }
 
 .card {
