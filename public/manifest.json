@@ -1,0 +1,21 @@
+{
+  "name": "Six Degrees of Spider-Man",
+  "short_name": "Six Degrees",
+  "description": "Six clues. One hidden connection. Find the thread.",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#05070D",
+  "theme_color": "#E11D2E",
+  "icons": [
+    {
+      "src": "assets/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

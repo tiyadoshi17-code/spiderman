@@ -1,0 +1,10 @@
+{
+  "name": "six-degrees-pwa",
+  "version": "1.0.0",
+  "description": "Six Degrees of Spider-Man PWA",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {}
+}

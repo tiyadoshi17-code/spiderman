@@ -1,0 +1,426 @@
+:root {
+    --bg-primary: #05070D;
+    --bg-secondary: #0B1220;
+    --bg-tertiary: #111827;
+    --spider-red: #E11D2E;
+    --spider-blue: #2563EB;
+    --text-primary: #F8FAFC;
+    --text-secondary: #94A3B8;
+    --border: rgba(255,255,255,0.12);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    user-select: none;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-image: url('assets/spiderman_comic_bg.png');
+    background-size: cover;
+    background-position: center;
+    color: var(--text-primary);
+    min-height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Background Effects */
+#background-fx {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(var(--border) 1px, transparent 1px),
+        repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255,255,255,0.01) 10px, rgba(255,255,255,0.01) 20px);
+    background-size: 20px 20px, 100% 100%;
+    opacity: 0.15;
+    z-index: 0;
+    pointer-events: none;
+}
+
+h1, h2, .logo, .subtitle, .timer-value, .mission-header, .tagline {
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 1.5px;
+}
+
+.red-text { color: var(--spider-red); }
+.blue-text { color: var(--spider-blue); }
+
+.screen {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    transition: opacity 0.3s ease;
+}
+
+.screen.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.screen.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Typography */
+.logo { font-size: 5rem; color: #fff; letter-spacing: 3px; }
+.subtitle { font-size: 3rem; color: var(--spider-red); margin-top: -10px; }
+.tagline { font-family: 'Inter', sans-serif; font-style: italic; color: var(--text-secondary); margin-top: 10px; }
+
+/* Buttons */
+button {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 1.2rem;
+    padding: 1rem 3rem;
+    margin-top: 2rem;
+    background: var(--spider-red);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: transform 0.1s, background 0.2s, box-shadow 0.2s;
+    text-transform: uppercase;
+}
+
+button:hover {
+    background: #f72335;
+    box-shadow: 0 0 15px rgba(225, 29, 46, 0.4);
+}
+
+.team-input {
+    background: var(--bg-tertiary);
+    border: 2px solid var(--border);
+    color: var(--text-primary);
+    font-family: 'Inter', sans-serif;
+    font-size: 1.2rem;
+    padding: 1rem 2rem;
+    margin-top: 2rem;
+    border-radius: 4px;
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.team-input:focus {
+    border-color: var(--spider-blue);
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+.btn-secondary {
+    background: transparent;
+    border: 2px solid var(--text-secondary);
+    color: var(--text-secondary);
+}
+.btn-secondary:hover {
+    background: rgba(255,255,255,0.1);
+    box-shadow: none;
+}
+
+/* Stats Row */
+.stats-row {
+    display: flex;
+    gap: 2rem;
+    margin-top: 3rem;
+    align-items: center;
+}
+.stat { text-align: center; }
+.stat h2 { font-size: 2.5rem; margin-bottom: -5px; }
+.stat span { font-size: 0.8rem; color: var(--text-secondary); }
+.divider { width: 1px; height: 30px; background: var(--border); }
+
+.small-text { font-size: 0.8rem; color: rgba(255,255,255,0.2); margin-top: 2rem; }
+
+/* Instructions */
+.rules-container {
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border);
+    padding: 2rem;
+    border-radius: 8px;
+    margin-top: 1.5rem;
+    max-width: 600px;
+    text-align: left;
+}
+.rules-container ol { margin-left: 1.5rem; margin-bottom: 1.5rem; font-size: 1.1rem; line-height: 1.8; }
+.rules-container ul { margin-left: 1.5rem; color: var(--text-secondary); line-height: 1.6; }
+.rules-container h3 { color: var(--spider-red); margin-bottom: 0.5rem; font-family: 'Bebas Neue', sans-serif; font-size: 1.5rem; }
+
+/* Game Screen */
+#game-screen {
+    justify-content: flex-start;
+}
+header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem 2rem;
+    background: var(--bg-secondary);
+    border-bottom: 1px solid var(--border);
+}
+.mission-header { font-size: 1.5rem; }
+.round { color: var(--text-secondary); font-weight: bold; }
+
+.timer-container {
+    margin-top: 1.5rem;
+    text-align: center;
+}
+.timer-value {
+    font-size: 5rem;
+    line-height: 1;
+    transition: color 0.3s;
+}
+.timer-value.normal { color: white; }
+.timer-value.warning { color: orange; }
+.timer-value.critical { color: var(--spider-red); animation: pulse 1s infinite; }
+.timer-label { font-size: 0.8rem; color: var(--text-secondary); }
+
+#hint-display {
+    color: var(--spider-blue);
+    font-style: italic;
+    margin-top: 10px;
+    font-weight: 600;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.05); opacity: 0.8; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+/* SVG Connection Lines Canvas */
+#connections-canvas {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 11;
+    pointer-events: none;
+}
+.connection-line {
+    stroke: rgba(255,255,255,0.2);
+    stroke-width: 2;
+    stroke-dasharray: 4;
+}
+
+/* Cards */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin: 2rem auto;
+    width: 90%;
+    max-width: 800px;
+    z-index: 12;
+}
+@media (max-width: 768px) {
+    .cards-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+    .logo { font-size: 4rem; }
+    .subtitle { font-size: 2.5rem; }
+}
+
+.card {
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1rem;
+    aspect-ratio: 4/3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: grab;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+.card:active { cursor: grabbing; }
+
+.card.dragging {
+    opacity: 0.5;
+    transform: scale(0.95) rotate(-2deg);
+}
+
+.card.selected {
+    border-color: var(--spider-red);
+    box-shadow: 0 0 15px rgba(225,29,46,0.3);
+}
+
+.card::after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    width: 80px;
+    height: 80px;
+    background: radial-gradient(circle, rgba(255,255,255,0.05) 10%, transparent 70%);
+    pointer-events: none;
+}
+
+.card .type {
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--spider-red);
+    letter-spacing: 1px;
+}
+.card .value {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2rem;
+    text-align: center;
+}
+.card .id {
+    font-size: 0.6rem;
+    color: var(--text-secondary);
+    text-align: right;
+}
+
+/* Answer Section */
+.answer-section {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border);
+    padding: 1.5rem 2rem;
+    z-index: 15;
+}
+#answer-form {
+    display: flex;
+    gap: 1rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+#answer-input {
+    flex-grow: 1;
+    background: var(--bg-primary);
+    border: 1px solid var(--border);
+    color: white;
+    padding: 1rem;
+    font-size: 1rem;
+    font-family: 'Inter', sans-serif;
+    outline: none;
+    border-radius: 4px;
+    user-select: text;
+}
+#answer-input:focus {
+    border-color: var(--spider-red);
+}
+#btn-submit {
+    margin-top: 0;
+}
+
+.bottom-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 800px;
+    margin: 1rem auto 0;
+}
+.attempts-display {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+}
+.hint-btn {
+    background: transparent;
+    color: var(--text-secondary);
+    margin: 0;
+    padding: 0;
+    font-size: 0.9rem;
+    text-transform: none;
+}
+.hint-btn:hover {
+    color: white;
+    box-shadow: none;
+}
+
+/* Modal */
+.modal {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(5,7,13,0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+.modal.hidden { display: none; }
+.modal-content {
+    background: var(--bg-tertiary);
+    padding: 2rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    text-align: center;
+}
+.modal-content h2 { margin-bottom: 0.5rem; font-size: 2rem; }
+.modal-actions { display: flex; gap: 1rem; justify-content: center; }
+
+/* End Screens */
+#success-screen h1, #failure-screen h1 {
+    font-size: 5rem;
+    margin-bottom: 2rem;
+}
+.final-answer-container {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.final-answer-container p { color: var(--text-secondary); font-size: 0.9rem; }
+.final-answer-container h2 { font-size: 3rem; }
+
+/* Leaderboard */
+#leaderboard-form {
+    display: flex;
+    gap: 1rem;
+    margin: 2rem 0;
+}
+#team-name {
+    padding: 1rem;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border);
+    color: white;
+    outline: none;
+    font-family: 'Inter', sans-serif;
+    border-radius: 4px;
+    user-select: text;
+}
+#team-name:focus { border-color: var(--spider-blue); }
+#leaderboard-list {
+    width: 100%;
+    max-width: 400px;
+    text-align: left;
+    margin-bottom: 2rem;
+}
+.lb-entry {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.8rem;
+    border-bottom: 1px solid var(--border);
+}
+.lb-entry .name { font-weight: bold; }
+.lb-entry .score { color: var(--spider-red); font-family: 'Bebas Neue', sans-serif; font-size: 1.2rem; }
+
+/* Animations */
+.shake {
+    animation: shake 0.4s cubic-bezier(.36,.07,.19,.97) both;
+}
+@keyframes shake {
+    10%, 90% { transform: translate3d(-1px, 0, 0); }
+    20%, 80% { transform: translate3d(2px, 0, 0); }
+    30%, 50%, 70% { transform: translate3d(-4px, 0, 0); }
+    40%, 60% { transform: translate3d(4px, 0, 0); }
+}
