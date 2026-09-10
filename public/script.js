@@ -344,7 +344,7 @@ function drawConnections() {
 }
 
 window.addEventListener('resize', drawConnections);
-document.getElementById('game-screen').addEventListener('scroll', drawConnections);
+document.querySelector('.cards-grid').addEventListener('scroll', drawConnections);
 
 // Answer Submission
 answerForm.addEventListener('submit', (e) => {
