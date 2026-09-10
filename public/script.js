@@ -344,6 +344,7 @@ function drawConnections() {
 }
 
 window.addEventListener('resize', drawConnections);
+document.getElementById('game-screen').addEventListener('scroll', drawConnections);
 
 // Answer Submission
 answerForm.addEventListener('submit', (e) => {
