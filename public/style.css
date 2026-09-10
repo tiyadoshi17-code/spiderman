@@ -230,41 +230,63 @@ header {
     z-index: 12;
 }
 @media (max-width: 768px) {
-    .cards-grid { 
-        grid-template-columns: repeat(3, 1fr); 
+    #game-screen { 
+        display: flex; 
+        flex-direction: column; 
+        height: 100vh; 
+        height: 100svh; 
+        overflow: hidden; 
+        padding: 0; 
+        justify-content: flex-start;
+    }
+    header { 
+        flex-shrink: 0; 
+        padding: 1rem; 
+        flex-direction: column; 
+        align-items: center; 
         gap: 0.5rem; 
-        width: 98%; 
-        margin: 0 auto; 
+        width: 100%; 
+    }
+    .mission-header { font-size: 1.2rem; }
+    .timer-container { margin-top: 0; }
+    .timer-value { font-size: 3rem; }
+    
+    .cards-grid { 
+        flex: 1; 
+        overflow-y: auto; 
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 1rem; 
+        width: 100%; 
+        margin: 0; 
+        padding: 1rem; 
         max-height: none; 
-        overflow: visible; 
-        padding: 2px; 
     }
     .card { 
-        padding: 0.3rem; 
-        aspect-ratio: auto; 
-        min-height: 80px; 
-        justify-content: center; 
-        gap: 0.2rem; 
+        padding: 1rem; 
+        aspect-ratio: 4/3; 
+        min-height: auto; 
     }
-    .card .value { font-size: 1.1rem; }
-    .card .type { font-size: 0.6rem; }
-    .logo { font-size: 2.5rem; }
-    .subtitle { font-size: 1.2rem; }
+    .card .value { font-size: 1.4rem; }
+    .card .type { font-size: 0.7rem; }
+    .logo { font-size: 3rem; }
+    .subtitle { font-size: 1.5rem; }
     
-    #game-screen { overflow: hidden; padding-bottom: 0; justify-content: space-between; align-items: center; display: flex; flex-direction: column; }
-    .answer-section { position: relative; bottom: auto; left: auto; width: 100%; z-index: 20; padding: 0.8rem; border-top: 1px solid var(--border); background: var(--bg-secondary); margin-top: auto; }
-    #connections-canvas { position: absolute; }
-    
-    header { padding: 0.5rem; flex-direction: row; align-items: center; justify-content: space-between; gap: 0; width: 100%; }
-    .mission-header { font-size: 1.1rem; }
-    .timer-container { margin-top: 0.2rem; }
-    .timer-value { font-size: 2.8rem; }
+    .answer-section { 
+        flex-shrink: 0; 
+        position: static; 
+        width: 100%; 
+        z-index: 20; 
+        padding: 1rem; 
+        border-top: 1px solid var(--border); 
+        background: var(--bg-secondary); 
+    }
+    #connections-canvas { position: absolute; pointer-events: none; }
     
     #answer-form { flex-direction: column; gap: 0.5rem; display: flex; }
     #answer-input { font-size: 1rem; padding: 0.8rem; width: 100%; margin: 0; text-align: center; }
     #btn-submit { margin-top: 0; padding: 0.8rem; width: 100%; font-size: 1.2rem; }
-    .bottom-bar { flex-direction: row; justify-content: space-between; gap: 1rem; margin-top: 0.5rem; align-items: center; display: flex; }
-    .attempts-display { font-size: 0.8rem; }
+    .bottom-bar { flex-direction: column; gap: 1rem; margin-top: 0.5rem; align-items: center; display: flex; }
+    .attempts-display { font-size: 0.9rem; }
     
     .rules-container { padding: 1rem; width: 90%; }
     .rules-container ol, .rules-container ul { font-size: 0.9rem; }
