@@ -257,6 +257,7 @@ header {
     
     .cards-grid { 
         flex: 1; 
+        min-height: 0; 
         overflow-y: auto; 
         display: grid;
         grid-template-columns: repeat(2, 1fr); 
