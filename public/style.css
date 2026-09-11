@@ -247,47 +247,49 @@ header {
         align-items: center; 
         gap: 0; 
         width: 100%; 
+        position: relative;
+        z-index: 20;
     }
     .mission-header { font-size: 1.1rem; }
-    .timer-container { margin-top: 0.2rem; margin-bottom: 0.2rem; flex-shrink: 0; }
+    .timer-container { margin-top: 0.2rem; margin-bottom: 0.2rem; flex-shrink: 0; position: relative; z-index: 20; }
     .timer-value { font-size: 2.5rem; }
     .timer-label { font-size: 0.7rem; }
     
     .cards-grid { 
         flex: 1; 
-        overflow: hidden; 
+        overflow-y: auto; 
         display: grid;
         grid-template-columns: repeat(2, 1fr); 
-        grid-template-rows: repeat(3, 1fr);
-        gap: 0.5rem; 
+        gap: 1rem; 
         width: 100%; 
         margin: 0; 
-        padding: 0.5rem; 
+        padding: 1rem; 
+        padding-bottom: 2rem; 
         max-height: none; 
     }
     .card { 
-        padding: 0.5rem; 
-        aspect-ratio: auto; 
-        min-height: 0; 
+        padding: 0.8rem; 
+        aspect-ratio: 4/3; 
+        min-height: auto; 
         justify-content: space-between;
     }
-    .card .value { font-size: 1.1rem; line-height: 1.1; margin: auto 0; display: flex; align-items: center; justify-content: center; height: 100%; text-align: center; }
-    .card .type { font-size: 0.6rem; }
-    .card .id { font-size: 0.5rem; }
+    .card .value { font-size: 1.2rem; line-height: 1.1; margin: auto 0; display: flex; align-items: center; justify-content: center; height: 100%; text-align: center; }
+    .card .type { font-size: 0.65rem; }
+    .card .id { font-size: 0.55rem; }
     
     .logo { font-size: 3rem; }
     .subtitle { font-size: 1.5rem; }
     
     .answer-section { 
         flex-shrink: 0; 
-        position: static; 
+        position: relative; 
         width: 100%; 
         z-index: 20; 
-        padding: 0.8rem; 
+        padding: 0.8rem 1rem; 
         border-top: 1px solid var(--border); 
         background: var(--bg-secondary); 
     }
-    #connections-canvas { position: absolute; pointer-events: none; }
+    #connections-canvas { position: absolute; pointer-events: none; z-index: 11; }
     
     #answer-form { flex-direction: row; gap: 0.5rem; display: flex; }
     #answer-input { font-size: 1rem; padding: 0.6rem; width: 100%; margin: 0; text-align: left; flex: 1; }
