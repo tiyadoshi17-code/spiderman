@@ -257,26 +257,25 @@ header {
     
     .cards-grid { 
         flex: 1; 
-        min-height: 0; 
-        overflow-y: auto; 
         display: grid;
         grid-template-columns: repeat(2, 1fr); 
-        gap: 1rem; 
+        grid-template-rows: repeat(3, 1fr);
+        gap: 0.5rem; 
         width: 100%; 
         margin: 0; 
-        padding: 1rem; 
-        padding-bottom: 2rem; 
-        max-height: none; 
+        padding: 0.5rem; 
+        padding-bottom: 1rem; 
+        overflow: hidden;
     }
     .card { 
-        padding: 0.8rem; 
-        aspect-ratio: 4/3; 
+        padding: 0.5rem; 
+        aspect-ratio: auto; 
         min-height: auto; 
         justify-content: space-between;
     }
-    .card .value { font-size: 1.2rem; line-height: 1.1; margin: auto 0; display: flex; align-items: center; justify-content: center; height: 100%; text-align: center; }
-    .card .type { font-size: 0.65rem; }
-    .card .id { font-size: 0.55rem; }
+    .card .value { font-size: 0.9rem; line-height: 1.1; margin: auto 0; display: flex; align-items: center; justify-content: center; height: 100%; text-align: center; }
+    .card .type { font-size: 0.55rem; margin-bottom: 0.2rem;}
+    .card .id { font-size: 0.5rem; }
     
     .logo { font-size: 3rem; }
     .subtitle { font-size: 1.5rem; }
