@@ -2,80 +2,80 @@ const puzzles = [
     {
         id: 1,
         cards: [
-            { type: "LOCATION", value: "BROOKLYN" },
-            { type: "NUMBER", value: "42" },
-            { type: "ACTION", value: "LEAP OF FAITH" },
-            { type: "OBJECT", value: "SPRAY CAN" },
-            { type: "RELATIVE", value: "UNCLE AARON" },
-            { type: "COMPANY", value: "ALCHEMAX" }
+            { type: "POWER", value: "INVISIBILITY" },
+            { type: "POWER", value: "VENOM BLAST" },
+            { type: "HOME", value: "BROOKLYN" },
+            { type: "MENTOR", value: "PETER PARKER" },
+            { type: "MOVIE", value: "SPIDER-VERSE" },
+            { type: "SUIT", value: "BLACK AND RED" }
         ],
         acceptedAnswers: ["MILES MORALES", "MILES"],
-        hint: "Who took a leap of faith?"
+        hint: "The new Spider-Man who can turn invisible and use venom blasts."
     },
     {
         id: 2,
         cards: [
-            { type: "JOB", value: "FREELANCER" },
-            { type: "PLACE", value: "DAILY BUGLE" },
-            { type: "CONCEPT", value: "GUILT" },
-            { type: "EVENT", value: "FIELD TRIP" },
-            { type: "INSECT", value: "ARACHNID" },
-            { type: "FABRIC", value: "SPANDEX" }
+            { type: "UNCLE", value: "BEN" },
+            { type: "AUNT", value: "MAY" },
+            { type: "PHRASE", value: "GREAT POWER" },
+            { type: "JOB", value: "PHOTOGRAPHER" },
+            { type: "PLACE", value: "QUEENS" },
+            { type: "IDENTITY", value: "ORIGINAL SPIDER-MAN" }
         ],
         acceptedAnswers: ["PETER PARKER", "PETER"],
-        hint: "Who learned the hardest lesson about power?"
+        hint: "The original web-slinger who takes pictures for the Daily Bugle."
     },
     {
         id: 3,
         cards: [
-            { type: "COLOR", value: "CRIMSON" },
-            { type: "PHRASE", value: "FACE IT" },
-            { type: "VENUE", value: "NIGHTCLUB" },
-            { type: "JOB", value: "SUPERMODEL" },
-            { type: "NICKNAME", value: "TIGER" },
-            { type: "FEATURE", value: "DIMPLES" }
+            { type: "NICKNAME", value: "MJ" },
+            { type: "HAIR", value: "RED" },
+            { type: "PHRASE", value: "HIT THE JACKPOT" },
+            { type: "PARTNER", value: "PETER PARKER" },
+            { type: "JOB", value: "REPORTER" },
+            { type: "ICONIC", value: "FACE IT TIGER" }
         ],
         acceptedAnswers: ["MARY JANE", "MARY JANE WATSON", "MJ"],
-        hint: "Face it tiger, you just hit the..."
+        hint: "Peter Parker's iconic red-headed love interest."
     },
     {
         id: 4,
         cards: [
-            { type: "FOOD", value: "TATER TOTS" },
-            { type: "SOUND", value: "RINGING" },
-            { type: "EMOTION", value: "HATRED" },
-            { type: "ENTITY", value: "KLYNTAR" },
-            { type: "WEAKNESS", value: "FIRE" },
-            { type: "COLOR", value: "BLACK" }
+            { type: "SPECIES", value: "ALIEN SYMBIOTE" },
+            { type: "HOST", value: "EDDIE BROCK" },
+            { type: "COLOR", value: "BLACK AND WHITE" },
+            { type: "PHRASE", value: "WE ARE VENOM" },
+            { type: "WEAKNESS", value: "LOUD NOISES" },
+            { type: "RIVAL", value: "SPIDER-MAN" }
         ],
         acceptedAnswers: ["VENOM", "EDDIE BROCK", "EDDIE"],
-        hint: "We are..."
+        hint: "The black alien symbiote that bonds with Eddie Brock."
     },
     {
         id: 5,
         cards: [
-            { type: "COMPANY", value: "MULTINATIONAL" },
-            { type: "CHEMICAL", value: "GLOBULIN-MAX" },
-            { type: "LAUGH", value: "MANIACAL" },
-            { type: "WEAPON", value: "RAZOR BATS" },
-            { type: "MOTIF", value: "HALLOWEEN" },
-            { type: "MASK", value: "DEMONIC" }
+            { type: "STATUS", value: "BILLIONAIRE" },
+            { type: "WEAPON", value: "PUMPKIN BOMBS" },
+            { type: "VEHICLE", value: "GLIDER" },
+            { type: "COMPANY", value: "OSCORP" },
+            { type: "COLOR", value: "GREEN AND PURPLE" },
+            { type: "ENEMY", value: "SPIDER-MAN" }
         ],
         acceptedAnswers: ["GREEN GOBLIN", "NORMAN OSBORN", "GOBLIN"],
-        hint: "You know how much I sacrificed?!"
+        hint: "The villainous billionaire who rides a glider."
     },
     {
         id: 6,
         cards: [
-            { type: "FIELD", value: "NUCLEAR PHYSICS" },
+            { type: "OBSESSION", value: "TRITIUM" },
+            { type: "FEATURE", value: "4 MECHANICAL ARMS" },
+            { type: "JOB", value: "SCIENTIST" },
             { type: "ALLOY", value: "CARBONADIUM" },
-            { type: "ELEMENT", value: "TRITIUM" },
-            { type: "SHAPE", value: "HARNESS" },
-            { type: "INFLUENCE", value: "NEURAL INHIBITOR" },
-            { type: "TITLE", value: "MASTER PLANNER" }
+            { type: "ENEMY", value: "SPIDER-MAN" },
+            { type: "GOAL", value: "FUSION ENERGY" }
         ],
         acceptedAnswers: ["DOCTOR OCTOPUS", "DOC OCK", "OTTO OCTAVIUS", "OTTO"],
-        hint: "The power of the sun, in the palm of my hand."
+        hint: "The brilliant scientist with four metal tentacles on his back."
     }
 ];
 
